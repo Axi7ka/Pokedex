@@ -1,11 +1,9 @@
 package com.example.pokedex.data.remote.responses
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
 data class Stat(
-    @SerialName("base_stat")
+    @SerializedName("base_stat")
     val baseStat: Int,
     val effort: Int,
     val stat: StatX

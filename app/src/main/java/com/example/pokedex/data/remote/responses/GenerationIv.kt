@@ -1,13 +1,11 @@
 package com.example.pokedex.data.remote.responses
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
 data class GenerationIv(
-    @SerialName("diamond-pearl")
+    @SerializedName("diamond-pearl")
     val diamondPearl: DiamondPearl,
-    @SerialName("heartgold-soulsilver")
+    @SerializedName("heartgold-soulsilver")
     val heartgoldSoulsilver: HeartgoldSoulsilver,
     val platinum: Platinum
 )

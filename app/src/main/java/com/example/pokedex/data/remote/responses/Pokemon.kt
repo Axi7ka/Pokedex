@@ -1,28 +1,26 @@
 package com.example.pokedex.data.remote.responses
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
 data class Pokemon(
     val abilities: List<Ability>,
-    @SerialName("base_experience")
+    @SerializedName("base_experience")
     val baseExperience: Int,
     val forms: List<Form>,
-    @SerialName("game_indices")
+    @SerializedName("game_indices")
     val gameIndices: List<GameIndice>,
     val height: Int,
-    @SerialName("held_items")
+    @SerializedName("held_items")
     val heldItems: List<Any>,
     val id: Int,
-    @SerialName("is_default")
+    @SerializedName("is_default")
     val isDefault: Boolean,
-    @SerialName("location_area_encounters")
+    @SerializedName("location_area_encounters")
     val locationAreaEncounters: String,
     val moves: List<Move>,
     val name: String,
     val order: Int,
-    @SerialName("past_types")
+    @SerializedName("past_types")
     val pastTypes: List<Any>,
     val species: Species,
     val sprites: Sprites,

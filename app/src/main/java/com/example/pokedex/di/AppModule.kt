@@ -1,4 +1,4 @@
-package com.example.pokedexapp.di
+package com.example.pokedex.di
 
 import dagger.Module
 import dagger.hilt.InstallIn

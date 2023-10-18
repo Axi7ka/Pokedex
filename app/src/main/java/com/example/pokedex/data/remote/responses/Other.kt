@@ -1,13 +1,11 @@
 package com.example.pokedex.data.remote.responses
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
 data class Other(
-    @SerialName("dream_world")
+    @SerializedName("dream_world")
     val dreamWorld: DreamWorld,
     val home: Home,
-    @SerialName("official-artwork")
+    @SerializedName("official-artwork")
     val officialArtwork: OfficialArtwork
 )

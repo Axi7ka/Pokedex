@@ -1,12 +1,10 @@
 package com.example.pokedex.data.remote.responses
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
 data class GenerationVi(
-    @SerialName("omegaruby-alphasapphire")
+    @SerializedName("omegaruby-alphasapphire")
     val omegarubyAlphasapphire: OmegarubyAlphasapphire,
-    @SerialName("x-y")
+    @SerializedName("x-y")
     val xY: XY
 )
