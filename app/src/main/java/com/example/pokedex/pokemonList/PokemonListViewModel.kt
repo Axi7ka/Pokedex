@@ -3,6 +3,7 @@ package com.example.pokedex.pokemonList
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
+import android.util.Log
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.ViewModel
@@ -15,7 +16,6 @@ import com.example.pokedex.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import javax.inject.Singleton
 
 @HiltViewModel
 class PokemonListViewModel @Inject constructor(
@@ -70,6 +70,8 @@ class PokemonListViewModel @Inject constructor(
 
         Palette.from(bmp).generate { palette ->
             palette?.dominantSwatch?.rgb?.let { colorValue ->
+                val color = Color(colorValue)
+                Log.d("DominantColor", "Dominant Color: $color")
                 onFinished(Color(colorValue))
             }
         }

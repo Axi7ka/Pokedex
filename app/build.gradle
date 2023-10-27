@@ -39,7 +39,10 @@ android {
         compose true
     }
     composeOptions {
+        //giraffe  Kotlin version 1.8.20
         kotlinCompilerExtensionVersion '1.4.6'
+        //electric eel
+//        kotlinCompilerExtensionVersion '1.4.0'
     }
 //    packaging {
 //        resources {
