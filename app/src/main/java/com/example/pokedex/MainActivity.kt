@@ -6,19 +6,24 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.toLowerCase
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.example.pokedex.pokemonDetails.PokemonDetailsScreen
+import com.example.pokedex.pokemonDetails.PokemonDetailsViewModel
 import com.example.pokedex.pokemonList.PokemonListScreen
 import com.example.pokedex.pokemonList.PokemonListViewModel
 import com.example.pokedex.ui.theme.PokedexTheme
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.Locale
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     private val viewModel: PokemonListViewModel by viewModels()
+    private val pokemonDetailsViewModel: PokemonDetailsViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -49,6 +54,12 @@ class MainActivity : ComponentActivity() {
                         val pokemonName = remember {
                             it.arguments?.getString("pokemonName")
                         }
+                        PokemonDetailsScreen(
+                            dominantColor = dominantColor,
+                            pokemonName = pokemonName?.lowercase(Locale.ROOT)?: "",
+                            navController = navController,
+                            viewModel = pokemonDetailsViewModel
+                        )
                     }
                 }
             }
